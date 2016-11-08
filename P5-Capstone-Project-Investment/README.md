@@ -1,4 +1,4 @@
-# Machine Learning Engineer Nanodegree
+# AI Stock Trading Agent
 # Capstone Project
 
 ### About
@@ -20,7 +20,7 @@ This repository contains project work to build a Q-learning neural network stock
 ### Setup
 If all necessary libraries and dependencies are installed, run qlearning_trader.ipynb. Note that the data retrieved runs up to the current date. To use the data I originally used (stored in data folder), skip down to the implementation section of the notebook. Run code from their forward.
 
-### folders
+### Folders
 * data - stores price, technical, and spy data in pkl format
 * logs - stores evaluation text output from trading agent
 * plots - stores evaluation plot output from trading agent
