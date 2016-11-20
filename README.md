@@ -1,4 +1,4 @@
-# Machine Learning Engineer Nanodegree
+# Machine Learning Engineer Nanodegree - Udacity
 
 ### About
 This repository contains project work for Udacity's [Machine Learning Engineer Nanodegree](https://www.udacity.com/course/machine-learning-engineer-nanodegree--nd009).
@@ -9,4 +9,4 @@ This repository contains project work for Udacity's [Machine Learning Engineer N
 - **P2** - Build a Student Intervention System
 - **P3** - Creating Customer Segments
 - **P4** - Train a Smartcab to Drive
-- **P5** - Capstone Project
+- **P5** - Capstone Project AI Stock Trader
