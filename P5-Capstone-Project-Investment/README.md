@@ -1,10 +1,9 @@
 # AI Stock Trading Agent
-# Capstone Project
 
 ### About
 This repository contains project work to build a Q-learning neural network stock trading agent.
 
-### Libraries needed
+### Libraries required
 * pandas
 * numpy
 * pandas_datareader
