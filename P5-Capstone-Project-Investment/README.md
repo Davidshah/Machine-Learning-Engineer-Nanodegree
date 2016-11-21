@@ -3,7 +3,8 @@
 ### About
 This repository contains project work to build a Q-learning neural network stock trading agent.
 
-### Libraries required
+### Install
+* Python 2.7
 * pandas
 * numpy
 * pandas_datareader
@@ -12,12 +13,10 @@ This repository contains project work to build a Q-learning neural network stock
 * random
 * timeit
 * keras (https://keras.io/)
-
-### Necessary install
 * Theano (http://deeplearning.net/software/theano/install.html#install)
 
-### Setup
-If all necessary libraries and dependencies are installed, run qlearning_trader.ipynb. Note that the data retrieved runs up to the current date. To use the data I originally used (stored in data folder), skip down to the implementation section of the notebook. Run code from their forward.
+### Code Setup
+If all necessary libraries and dependencies are installed, run qlearning_trader.ipynb. Note that the data retrieved runs up to the current date. To use the data I originally used (stored in data folder), skip down to the implementation section of the notebook. Run code from there forward.
 
 ### Folders
 * data - stores price, technical, and spy data in pkl format
