@@ -1,0 +1,61 @@
+# QUESTION 1
+
+Iterating through the input string in the correct sized slices was simple enough. I just had to find the
+lengths of the inputs and slice by the corresponding indexes. Finding an efficient solution for comparing
+all of the possible anagrams of `t` to the substrings of `s` was a challenge. At first, I played around
+with the idea of finding all the possible arrangements of `t` and seeing if any of them matched a given
+substring. This idea wasn't scalable since the number of arrangements grows by a factorial of the length.
+Instead, I started to think about what matching with an anagram would mean. Since any arrangement of `t`
+was possible, all I had to do was see if the substring of `s` contained the same letters as `t`. I used a
+trick where I converted both the substring of `s` and `t` to lists and then sorted them. If the two lists
+matched I could return `True`.
+
+In the worse case, my solution takes time of O(n^2) and space of O(n), where n is the length of the input
+string `s`. The for loop checking all possible substrings of `s` dominates the efficiency calculation.
+
+
+# QUESTION 2
+
+My strategy here was to start from the largest possible palindrome, which would be `a`, and check to see
+if it was palindromic by checking equivalency with a copy of the word in reverse order. If it was palindromic,
+the algorithm can stop. If it was not palindromic, the algorithm would search the next largest possible
+palindromic substrings and repeat.
+
+In the worse case, my solution takes time of O(n^2) and space of O(n), where n is the length of the input string
+`a`. The for loop checking all possible substrings dominates the efficiency calculation.
+
+
+# QUESTION 3
+
+This one took me a while to figure out. After fumbling around with the question, I decided to use a heap. A heap
+is just a tree-based data structure with the property that the children of a parent node are ordered in relation
+to the parent. As I searched `G` using a max-heap, I could store new weights and pop out the minimum values while
+maintaining the heap property. By moving through the graph by minimum weights I could find the MST. It took some
+adjusting to convert the input to a format that would let me solve the problem with my strategy.
+
+In the worse case, my solution takes time of O(Elog(V)) and space of O(E), where n is the length of the input string
+`a`. Since we are using a heap for our while loop, we reduce the number of vertices that we will need to check since
+each vertex is inserted in the queue once at logarithmic time. From there it is a process of comparing edge weights.
+
+
+# QUESTION 4
+
+Understanding how a binary search tree works helped enormously for solving this question. A value larger than a parent
+node will be stored in the right child, and a value smaller than a parent node will be stored in the left child. With
+this knowledge, I could just recursively move down the tree until I found a node where `n1` and `n2` are on different
+sides of the current root node. This would mean that the current root was the LCA.
+
+In the worse case, my solution takes time of O(h) and space of O(h), where h is the height of the input tree. Since we
+are recursively moving through the function calls, the height will be the maximum time taken and space needed.
+
+
+# QUESTION 5
+
+I started out by building a linked list class for testing purposes. Once I had a linked list I needed a way to iterate
+through it up until `m` elements from the end. I decided to use two references points. One, `ref_node`, was initialized
+at the start of the list and moved `m` elements to the right. The second, `target_node`, was then initiated at the start
+of the list. Both reference points were then moved to the right until `ref_node` reached the end, a node containing None
+for next. Where ever `target_node` landed was the answer.
+
+In the worse case, my solution takes time of O(n) and space of O(1), where n is the length of the linked list. Since my
+while loops will never take longer the length of the linked list, the maximum amount of time is spent there.
