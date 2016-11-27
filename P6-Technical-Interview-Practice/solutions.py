@@ -29,13 +29,13 @@ def question1(s, t):
     t_list = list(t)
     t_list.sort()
     
-    # Iterate through slices of s of t_length (O(n^2))
-    for i in xrange(s_length - t_length + 1):
+    # Iterate through slices of s of t_length (O(n^2 log n))
+    for i in xrange(s_length - t_length + 1): # O(n)
         sub_string = s[i:(i + t_length)]
         
         # Concert to sorted list for easier comparison
         sub_string = list(sub_string)
-        sub_string.sort()
+        sub_string.sort() # O(n log n)
         
         # Compare sorted sub_string with t_list
         if sub_string == t_list:
@@ -216,7 +216,7 @@ def question4(T, r, n1, n2):
     if r >= len(T):
         return None
  
-    # Check if n1 and n2 are both smaller than the root
+    # Check if n1 and n2 are both smaller than the root (O(n))
     if(r > n1 and r > n2):
         return question4(T, T[r].index(1), n1, n2)
  

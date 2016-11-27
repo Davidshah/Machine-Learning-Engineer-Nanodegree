@@ -10,8 +10,9 @@ was possible, all I had to do was see if the substring of `s` contained the same
 trick where I converted both the substring of `s` and `t` to lists and then sorted them. If the two lists
 matched I could return `True`.
 
-In the worse case, my solution takes time of O(n^2) and space of O(n), where n is the length of the input
-string `s`. The for loop checking all possible substrings of `s` dominates the efficiency calculation.
+In the worse case, my solution takes time of O(n^2 log n) and space of O(n), where n is the length of the
+input string `s`. The for loop checking all possible substrings of `s` dominates the efficiency calculation.
+In this loop, we iterate through slices of `s` O(n) and sort each slice O(n log n).
 
 
 # QUESTION 2
@@ -45,8 +46,10 @@ node will be stored in the right child, and a value smaller than a parent node w
 this knowledge, I could just recursively move down the tree until I found a node where `n1` and `n2` are on different
 sides of the current root node. This would mean that the current root was the LCA.
 
-In the worse case, my solution takes time of O(h) and space of O(h), where h is the height of the input tree. Since we
-are recursively moving through the function calls, the height will be the maximum time taken and space needed.
+In the worse case, my solution takes time of O(n^2) and space of O(n), where n is the number of nodes in the input tree.
+This would be the case for a non-balanced tree, since we would need to go down one long leg of the tree in the worst
+case. At each level, we would need to run index() which takes O(n). If the tree is balanced, the solution would take
+O(n log n) in the worse case, since the height will be log(n) and at each level we will run index() which takes O(n).
 
 
 # QUESTION 5
